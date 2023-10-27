@@ -9,6 +9,7 @@ import { ShoppingCartIcon } from "@heroicons/react/outline";
 import { CurrencyRupeeIcon } from "@heroicons/react/outline";
 import { CashIcon } from "@heroicons/react/outline";
 
+
 const LeftColumn = () => {
   return (
     <div className="w-full flex flex-col justify-between p-2">
@@ -50,11 +51,6 @@ const LeftColumn = () => {
           DeltaValue={'increase'}
         />
       </div>
-
-      {/* <div className="flex flex-col lg:flex-row gap-2 w-full">
-        <BarChartComponent />
-        <SalesItem />
-      </div> */}
       
     </div>
   );

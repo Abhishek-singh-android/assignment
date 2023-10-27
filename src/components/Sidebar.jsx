@@ -1,13 +1,6 @@
-import React, { useState } from "react";
+
 import {
   ArrowUpIcon,
-  BellIcon,
-  ChartBarIcon,
-  CreditCardIcon,
-  DocumentSearchIcon,
-  ExternalLinkIcon,
-  HomeIcon,
-  MailIcon,
   PresentationChartBarIcon,
   LogoutIcon,
   TableIcon,
@@ -15,18 +8,15 @@ import {
   UserIcon,
   CashIcon,
   TrendingUpIcon,
-  SupportIcon,
   QuestionMarkCircleIcon
 } from "@heroicons/react/solid";
 
-import { Flex, Text } from "@tremor/react";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
 
-  const [focus,setFocus] = useState(false);
-
   return (
-    <div className="bg-slate-800 flex-none w-14 sm:w-40 h-200">
+    <div className="bg-slate-800 w-14 sm:w-60 h-[300vh]">
 
     <div className="fixed left-[-7px] sm:left-1">
     <div className="items-center justify-start flex m-4 gap-2 cursor-pointer">
@@ -36,42 +26,43 @@ const Sidebar = () => {
     </div>
 
 
+
       <div className="fixed left-[-7px] sm:left-1 top-[100px]">
     
-        <div className="items-center justify-start flex m-4 gap-2 cursor-pointer">
+        <NavLink to="/" className="items-center justify-start flex m-4 gap-2 cursor-pointer">
         <TableIcon
           width={40}
           className="bg-gray-600 p-2 rounded-lg mb-4 text-gray-300"
         />
         <h1 className="text-gray-200 mb-4">Dashboard</h1>
-        </div>
+        </NavLink>
 
 
-        <div className="items-center justify-start flex m-4 gap-2 cursor-pointer">
+        <NavLink to="kyc" className="items-center justify-start flex m-4 gap-2 cursor-pointer">
         <BriefcaseIcon
           width={40}
           className="bg-gray-600 p-2 rounded-lg mb-4 text-gray-300"
         />
-         <h1 className="text-gray-200 mb-4">Product</h1>
-        </div>
+         <h1 className="text-gray-200 mb-4">KYC</h1>
+        </NavLink>
 
 
-        <div className="items-center justify-start flex m-4 gap-2 cursor-pointer">
+        <NavLink to="auth" className="items-center justify-start flex m-4 gap-2 cursor-pointer">
         <UserIcon
           width={40}
           className="bg-gray-600 p-2 rounded-lg mb-4 text-gray-300"
         />
-        <h1 className="text-gray-200 mb-4">Customers</h1>
-        </div>
+        <h1 className="text-gray-200 mb-4">Auth</h1>
+        </NavLink>
 
 
-        <div className="items-center justify-start flex m-4 gap-2 cursor-pointer">
+        <NavLink to="manageAdmin" className="items-center justify-start flex m-4 gap-2 cursor-pointer">
         <CashIcon
           width={40}
           className="bg-gray-600 p-2 rounded-lg mb-4 text-gray-300"
         />
-         <h1 className="text-gray-200 mb-4">Income</h1>
-        </div>
+         <h1 className="text-gray-200 mb-4">Manage Admin</h1>
+        </NavLink>
 
         <div className="items-center justify-start flex m-4 gap-2 cursor-pointer">
         <TrendingUpIcon

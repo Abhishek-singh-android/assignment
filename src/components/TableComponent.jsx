@@ -1,5 +1,5 @@
 // import { BellIcon, ChartBarIcon, ExternalLinkIcon, MailIcon, StatusOnlineIcon } from "@heroicons/react/outline";
-import { HomeIcon, SearchIcon,ChartBarIcon,BellIcon,ExternalLinkIcon,MailIcon,StatusOnlineIcon } from "@heroicons/react/solid";
+import { HomeIcon, SearchIcon,ChartBarIcon,BellIcon,ExternalLinkIcon,MailIcon,StatusOnlineIcon, StatusOfflineIcon } from "@heroicons/react/solid";
 import {
   Card,
   Table,
@@ -15,50 +15,72 @@ import {
   TextInput,
 } from "@tremor/react";
 import { SelectComponent } from "./SelectComponent";
+import { useContext } from "react";
+import { SelectBoxContext } from "../pages/Dashboard";
 
 const data = [
   {
-    name: "Abstract 3D",
-    stock: "32 in stock",
+    name: "Pawan Kumar",
+    email: "pawan@gmail.com",
     Avatar:<HomeIcon width={40}/>,
     price: "$ 45.99",
+    role: "driver",
     status: "active",
   },
   {
-    name: "Iphone 9",
-    stock: "45 in stock",
+    name: "Chaman Lal",
+    email: "chaman@gmail.com",
     Avatar:<SearchIcon width={40}/>,
     price: "$ 45.99",
+    role: "mechanic",
     status: "active",
   },
   {
-    name: "Smart Watch",
-    stock: "24 in stock",
+    name: "Somya Kriplani",
+    email: "somya@gmail.com",
     Avatar:<BellIcon width={40}/>,
     price: "$ 20",
-    status: "active",
+    role:"cleaner",
+    status: "inactive",
   },
   {
-    name: "Boat Headphone",
-    stock: "20 in stock",
+    name: "Priya Desai",
+    email: "priya@gmail.com",
     Avatar:<ChartBarIcon width={40}/>,
     price: "$ 29.66",
-    status: "active",
+    role:"driver",
+    status: "inactive",
   },
-
 ];
 
+
+const filterData = [...data];
+
+
 const TableComponent = () => {
+
+  const roleDB = ['driver','cleaner','mechanic','all'];
+
+  const { selectRole } = useContext(SelectBoxContext);
+
+  // console.log("SelectBat: ",selectRole);
+
+  const result = selectRole==='all' ? data :selectRole==undefined ? data : filterData.filter((user)=>user.role === selectRole);
+  console.log("result: ",result);
+
+
+  // console.log("RoleDB: ",roleDB)
 
   return (
     <Card className="mt-4 dark:bg-tremor-background">
 
     <div className="sm:flex justify-between items-center">
-    <Title>Product Sell</Title>
+    <Title>Product List</Title>
     <div className="py-2">
     <div className="sm:flex justify-between items-center">
         <TextInput className="dark:bg-tremor-background mr-4 mb-2" icon={SearchIcon} placeholder="Search..." />
-        <SelectComponent/>
+
+        <SelectComponent roleDB={roleDB}/>
         </div>
 
       </div>
@@ -69,13 +91,16 @@ const TableComponent = () => {
       <TableHead>
         <TableRow>
           <TableHeaderCell>Name</TableHeaderCell>
-          <TableHeaderCell>Position</TableHeaderCell>
-          <TableHeaderCell>Department</TableHeaderCell>
+          <TableHeaderCell>Email</TableHeaderCell>
+          <TableHeaderCell>Earning</TableHeaderCell>
+          <TableHeaderCell>Role</TableHeaderCell>
           <TableHeaderCell>Status</TableHeaderCell>
         </TableRow>
       </TableHead>
       <TableBody>
-        {data.map((item) => (
+        {result.map((item) =>{
+
+          return (
           <TableRow key={item.name}>
 
           <div className="flex justify-start items-center">
@@ -85,20 +110,24 @@ const TableComponent = () => {
           {item.name}
           </div>
            
-
             <TableCell>
-              <Text>{item.stock}</Text>
+              <Text>{item.email}</Text>
             </TableCell>
             <TableCell>
               <Text>{item.price}</Text>
             </TableCell>
             <TableCell>
-              <Badge color="emerald" icon={StatusOnlineIcon}>
+              <Text>{item.role}</Text>
+            </TableCell>
+            <TableCell>
+              <Badge color={item.status==='active' ? "emerald" :"red"} icon={ item.status==='active' ? StatusOnlineIcon:StatusOfflineIcon}>
                 {item.status}
               </Badge>
             </TableCell>
           </TableRow>
-        ))}
+        )
+        }
+        )}
       </TableBody>
     </Table>
   </Card>

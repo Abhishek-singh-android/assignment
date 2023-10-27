@@ -2,6 +2,7 @@ import React from "react";
 import { Badge, BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
 import { ShoppingBagIcon } from "@heroicons/react/outline";
 
+
 const CardItem = ({CardTitle,CardData,FluctuateData,BadgeColor,BadgeIcon,DeltaValue}) => {
   return (
     <Card className="w-xs dark:bg-tremor-background" decoration="top" decorationColor="indigo">

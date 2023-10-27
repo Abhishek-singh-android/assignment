@@ -2,6 +2,7 @@ import { SearchIcon } from "@heroicons/react/solid";
 import { TextInput } from "@tremor/react";
 import React from "react";
 
+
 const Navbar = () => {
   return (
     <div

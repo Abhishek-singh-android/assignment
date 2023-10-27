@@ -1,5 +1,4 @@
 {
-  "homepage": "https://Abhishek-singh-android.github.io/assignment",
   "name": "template",
   "private": true,
   "version": "0.0.0",
@@ -7,8 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -17,9 +14,11 @@
     "@heroicons/react": "^1.0.6",
     "@tremor/react": "^3.9.2",
     "axios": "^1.5.1",
-    "gh-pages": "^6.0.0",
+    "http-proxy-middleware": "^2.0.6",
+    "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {

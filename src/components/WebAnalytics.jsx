@@ -1,6 +1,7 @@
 import React from "react";
 import { BarList, Card, Title, Bold, Flex, Text } from "@tremor/react";
 
+
 const data = [
   {
     name: "Twitter",
