@@ -10,6 +10,8 @@ import { CurrencyRupeeIcon } from "@heroicons/react/outline";
 import { CashIcon } from "@heroicons/react/outline";
 
 
+
+
 const LeftColumn = () => {
   return (
     <div className="w-full flex flex-col justify-between p-2">

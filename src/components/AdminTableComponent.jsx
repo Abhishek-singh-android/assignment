@@ -102,6 +102,21 @@ const AdminTableComponent = () => {
   }
 
   const handleDelete = (id)=>{
+
+    const API = axios.create({
+      baseURL: "http://localhost:8000",
+      withCredentials: true,
+    });
+
+    API.delete(`/api/v1/superadmin/`+id)
+    .then((res)=>{
+      console.log(res);
+      // setEditID(false);
+    })
+    .catch((error)=>{
+      console.log("eror: ",error)
+      // setEditID(false)
+    })
     
     setDeleteId(id)
   }

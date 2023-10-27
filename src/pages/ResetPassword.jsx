@@ -15,7 +15,7 @@ export default function ResetPassword() {
 
     if (token && password && confirmPassword) {
         // const OTP = Math.floor(Math.random() * 9000 + 1000);
-        // console.log(OTP);
+       
         // setOTP(OTP);
   
         axios

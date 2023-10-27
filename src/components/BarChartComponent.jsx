@@ -48,6 +48,7 @@ const chartdata1 = [
 ];
 
 
+
 const chartdata2 = [
   {
     date: "Jan",
@@ -99,6 +100,8 @@ const chartdata2 = [
   },
   
 ];
+
+
 
 const chartdata3 = [
   {

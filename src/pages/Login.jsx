@@ -15,10 +15,8 @@ export default function Login() {
 
   function nagigateToReset() {
     if (email) {
-      // const OTP = Math.floor(Math.random() * 9000 + 1000);
-      // console.log(OTP);
-      // setOTP(OTP);
 
+      
       axios
         .post(
           "https://service-provider-apis.onrender.com/api/v1/superadmin/forgotPassword/",

@@ -9,22 +9,27 @@ import { Listbox, Transition } from "@headlessui/react";
 const people = [
   {
     id: 1,
-    role: "admin",
+    role: "mechanic",
     avatar:
       'https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
   {
     id: 2,
-    role: "superadmin",
+    role: "cleaner",
+    avatar:
+      'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    id: 3,
+    role: "driver",
     avatar:
       'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
 ]
 
 
-export default function SignUp() {
+export default function ServiceProvider() {
 
-  
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [name, setName] = useState();
@@ -89,7 +94,7 @@ export default function SignUp() {
             <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
               <form>
                 <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
-                  <p className="text-center font-semibold mx-4 mb-0">SignUp Page</p>
+                  <p className="text-center font-semibold mx-4 mb-0">Service Provider</p>
                 </div>
 
                 <div className="mb-6">
@@ -246,3 +251,4 @@ export default function SignUp() {
     </div>
   );
 }
+

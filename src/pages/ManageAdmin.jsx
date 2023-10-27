@@ -9,7 +9,7 @@ const ManageAdmin = () =>
     <div className="col-span-2 p-4">
       <SignUp/>
     </div>
-
+    
     <div className="w-full p-4">
       <AdminTableComponent/>
     </div>

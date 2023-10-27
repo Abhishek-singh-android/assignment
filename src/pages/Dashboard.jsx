@@ -6,9 +6,7 @@ import RightColumn from '../components/RightColumn'
 export const SelectBoxContext = createContext();
 
 
-const Dashboard = () => {
-
- 
+const Dashboard = () => { 
 
   const [selectRole,setSelectRole] = useState();
 
@@ -31,4 +29,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;

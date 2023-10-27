@@ -25,8 +25,6 @@ const Sidebar = () => {
     </div>
     </div>
 
-
-
       <div className="fixed left-[-7px] sm:left-1 top-[100px]">
     
         <NavLink to="/" className="items-center justify-start flex m-4 gap-2 cursor-pointer">
@@ -64,13 +62,18 @@ const Sidebar = () => {
          <h1 className="text-gray-200 mb-4">Manage Admin</h1>
         </NavLink>
 
-        <div className="items-center justify-start flex m-4 gap-2 cursor-pointer">
+        {/* <div className="items-center justify-start flex m-4 gap-2 cursor-pointer"> */}
+        <NavLink to="serviceProvider" className="items-center justify-start flex m-4 gap-2 cursor-pointer">
         <TrendingUpIcon
           width={40}
           className="bg-gray-600 p-2 rounded-lg mb-4 text-gray-300"
         />
-         <h1 className="text-gray-200 mb-4">Promote</h1>
-        </div>
+         <h1 className="text-gray-200 mb-4">Service Provider</h1>
+        </NavLink>
+        {/* </div> */}
+
+
+
 
         <div className="items-center justify-start flex m-4 gap-2 cursor-pointer">
         <QuestionMarkCircleIcon

@@ -2,6 +2,7 @@ import React from "react";
 import { Card, List, ListItem, Title } from "@tremor/react";
 
 
+
 const cities = [
   {
     city: "Athens",
